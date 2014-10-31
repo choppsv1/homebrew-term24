@@ -22,6 +22,13 @@ class Emacs < Formula
     depends_on "automake" => :build
   end
 
+  # Fix ns-antialias-text, broken in 24.4, submitted upstream here:
+  # http://lists.gnu.org/archive/html/emacs-devel/2014-10/msg00813.html
+
+  patch do
+    url 'https://gist.githubusercontent.com/scotchi/66edaf426d7375c0f061/raw/b7055ba40a7dd9e8f6f5dd6bbe5c305a78bbbc87/emacs-fix-ns-antialias-text-mac-os.patch'
+    sha1 '6215c59c01dc247dfdec7c89ff2fe84ff28eb1c7'
+  end
 
   # Apply patch to support 24-bit colors in a terminal.
   patch :p0 do
