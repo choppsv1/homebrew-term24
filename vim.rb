@@ -78,6 +78,7 @@ class Vim < Formula
     # when calling "make install".
     system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
                           "--mandir=#{man}",
+                          "--enable-termtruecolor",
                           "--enable-multibyte",
                           "--with-tlib=ncurses",
                           "--enable-cscope",
