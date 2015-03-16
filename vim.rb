@@ -2,7 +2,7 @@ require 'formula'
 
 class Vim < Formula
   homepage 'http://www.vim.org/'
-  head 'https://bitbucket.org/ZyX_I/vim', :using => hg
+  head 'https://bitbucket.org/ZyX_I/vim', :using => :hg
   # This package tracks debian-unstable: http://packages.debian.org/unstable/vim
   url 'http://ftp.debian.org/debian/pool/main/v/vim/vim_7.4.430.orig.tar.gz'
   sha1 '63f558c3cf7461d16f1c587000ad2311500e6372'
