@@ -1,8 +1,8 @@
 require "formula"
 
 class Vim < Formula
-  homepage "http://www.vim.org/"
-  head "https://bitbucket.org/ZyX_I/vim", :using => :hg
+  homepage 'http://www.vim.org/'
+  head 'https://bitbucket.org/ZyX_I/vim', :using => :hg, branch: 'local-default'
   # This package tracks debian-unstable: http://packages.debian.org/unstable/vim
   url "http://ftp.debian.org/debian/pool/main/v/vim/vim_7.4.488.orig.tar.gz"
   sha1 "6edad8cf9a08acb6a6e415b89bb13ccbd887d7c3"
@@ -78,6 +78,7 @@ class Vim < Formula
     # when calling "make install".
     system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
                           "--mandir=#{man}",
+                          "--enable-termtruecolor",
                           "--enable-multibyte",
                           "--with-tlib=ncurses",
                           "--enable-cscope",

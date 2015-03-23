@@ -32,8 +32,8 @@ class Emacs < Formula
 
   # Apply patch to support 24-bit colors in a terminal.
   patch :p0 do
-    url "https://gist.githubusercontent.com/choppsv1/36aacdd696d505566088/raw/0d96a6c56b807aff0814eda25493d6247311f3b4/emacs-24.4-24bit.diff"
-    sha1 "34dc7eb437bd35d1c032841c51da960f1e0fdaad"
+    url "https://gist.githubusercontent.com/choppsv1/36aacdd696d505566088/raw/9f9f888ea987cfb9a2ea32a15947e16cb0672279/emacs-24.4-24bit.diff"
+    sha1 "4b03cf852314634ca5c49ce4a5698c57bfa46b30"
   end
 
   depends_on "pkg-config" => :build
