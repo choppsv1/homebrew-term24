@@ -122,6 +122,11 @@ class Emacs < Formula
     <dict>
       <key>Label</key>
       <string>#{plist_name}</string>
+      <key>EnvironmentVariables</key>
+      <dict>
+        <key>ITERM_24BIT=1</key>
+        <string>1</string>
+      </dict>
       <key>ProgramArguments</key>
       <array>
         <string>#{opt_bin}/emacs</string>
