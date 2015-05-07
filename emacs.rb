@@ -22,6 +22,12 @@ class Emacs < Formula
     depends_on "automake" => :build
   end
 
+  # Apply patch to support 24-bit colors in a terminal.
+  patch :p0 do
+    url "https://gist.githubusercontent.com/choppsv1/36aacdd696d505566088/raw/9f9f888ea987cfb9a2ea32a15947e16cb0672279/emacs-24.4-24bit.diff"
+    sha1 "4b03cf852314634ca5c49ce4a5698c57bfa46b30"
+  end
+  
   option "with-cocoa", "Build a Cocoa version of emacs"
   option "with-ctags", "Don't remove the ctags executable that emacs provides"
 
