@@ -2,8 +2,8 @@ require 'formula'
 
 class Tmux < Formula
   homepage 'http://tmux.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/tmux/tmux/tmux-1.9/tmux-1.9a.tar.gz'
-  sha1 '815264268e63c6c85fe8784e06a840883fcfc6a2'
+  url 'https://downloads.sourceforge.net/project/tmux/tmux/tmux-2.0/tmux-2.0.tar.gz'
+  sha1 '977871e7433fe054928d86477382bd5f6794dc3d'
 
   head do
     url 'git://git.code.sf.net/p/tmux/tmux-code'
@@ -14,8 +14,8 @@ class Tmux < Formula
   end
 
   patch :p1 do
-    url "https://gist.githubusercontent.com/choppsv1/dd00858d4f7f356ce2cf/raw/b66c1726b7d38b9a43d0e199f5b874e5f9d08526/tmux-24.diff"
-    sha1 "1e97dbaaa45684e7441adb2a1139097eafbd8868"
+    url "https://gist.githubusercontent.com/choppsv1/dd00858d4f7f356ce2cf/raw/75b073e85f3d539ed24907f1615d9e0fa3e303f4/tmux-24.diff"
+    sha256 '66207daba09783c49ea61d9b84f54cb5ce002054eea489fbe401306f6d1b7c56'
   end
 
   depends_on 'pkg-config' => :build
