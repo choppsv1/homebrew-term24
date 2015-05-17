@@ -24,10 +24,10 @@ class Emacs < Formula
 
   # Apply patch to support 24-bit colors in a terminal.
   patch :p0 do
-    url "https://gist.githubusercontent.com/choppsv1/36aacdd696d505566088/raw/9f9f888ea987cfb9a2ea32a15947e16cb0672279/emacs-24.4-24bit.diff"
-    sha1 "4b03cf852314634ca5c49ce4a5698c57bfa46b30"
+    url "https://gist.githubusercontent.com/choppsv1/e8198df70cb1778b04d6/raw/4bb449f36b621ae5122b673bf40cfad0b3bb103e/emacs-24.5-24bit.diff"
+    sha256 "fbe9ce2014535f79d878d65062906f8a869bf49fe51421672f10a406e1d44b12"
   end
-  
+
   option "with-cocoa", "Build a Cocoa version of emacs"
   option "with-ctags", "Don't remove the ctags executable that emacs provides"
 

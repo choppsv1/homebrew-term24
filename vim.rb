@@ -4,8 +4,8 @@ class Vim < Formula
   homepage 'http://www.vim.org/'
   head 'https://bitbucket.org/ZyX_I/vim', :using => :hg, branch: 'local-default'
   # This package tracks debian-unstable: http://packages.debian.org/unstable/vim
-  url "http://ftp.debian.org/debian/pool/main/v/vim/vim_7.4.488.orig.tar.gz"
-  sha1 "6edad8cf9a08acb6a6e415b89bb13ccbd887d7c3"
+  # url "http://ftp.debian.org/debian/pool/main/v/vim/vim_7.4.488.orig.tar.gz"
+  # sha1 "6edad8cf9a08acb6a6e415b89bb13ccbd887d7c3"
 
   # We only have special support for finding depends_on :python, but not yet for
   # :ruby, :perl etc., so we use the standard environment that leaves the
