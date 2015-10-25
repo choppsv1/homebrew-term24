@@ -1,12 +1,11 @@
-require 'formula'
-
 class Tmux < Formula
-  homepage 'http://tmux.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/tmux/tmux/tmux-2.0/tmux-2.0.tar.gz'
-  sha1 '977871e7433fe054928d86477382bd5f6794dc3d'
+  desc "Terminal multiplexer"
+  homepage "https://tmux.github.io/"
+  url "https://github.com/tmux/tmux/releases/download/2.1/tmux-2.1.tar.gz"
+  sha256 "31564e7bf4bcef2defb3cb34b9e596bd43a3937cad9e5438701a81a5a9af6176"
 
   head do
-    url 'git://git.code.sf.net/p/tmux/tmux-code'
+    url "https://github.com/tmux/tmux.git"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -14,29 +13,29 @@ class Tmux < Formula
   end
 
   patch :p1 do
-    url "https://gist.githubusercontent.com/choppsv1/dd00858d4f7f356ce2cf/raw/75b073e85f3d539ed24907f1615d9e0fa3e303f4/tmux-24.diff"
-    sha256 '66207daba09783c49ea61d9b84f54cb5ce002054eea489fbe401306f6d1b7c56'
+    url "https://gist.githubusercontent.com/choppsv1/352421a9f49262ad5c93/raw/5d29be026e11f75a9f570f354149c913c749a699/tmux-2.1-24bit.diff"
+    sha256 "6d92559da2bf7433f505efd785404fe055772c7cd8c49d208d7522b169c09903"
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libevent'
+  depends_on "pkg-config" => :build
+  depends_on "libevent"
 
   def install
     system "sh", "autogen.sh" if build.head?
 
-    ENV.append "LDFLAGS", '-lresolv'
+    ENV.append "LDFLAGS", "-lresolv"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}"
-    system "make install"
+    system "make", "install"
 
-    bash_completion.install "examples/bash_completion_tmux.sh" => 'tmux'
-    (share/'tmux').install "examples"
+    bash_completion.install "examples/bash_completion_tmux.sh" => "tmux"
+    pkgshare.install "examples"
   end
 
   def caveats; <<-EOS.undent
     Example configurations have been installed to:
-      #{share}/tmux/examples
+      #{pkgshare}/examples
     EOS
   end
 
